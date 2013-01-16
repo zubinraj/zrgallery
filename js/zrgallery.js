@@ -85,10 +85,11 @@
 
 		// ensure that images load before adding to masonry layout
 		$newElems.imagesLoaded(function(){
-			// show elems now they're ready
-			$newElems.animate({ opacity: 1 });
 
 			$container.append( $newElems ).isotope( 'appended', $newElems );
+
+			// show elems now they're ready
+			$newElems.animate({ opacity: 1 });
 			
 			// reset this flag so that the next scroll can pull in more items
 			inAction = false;
