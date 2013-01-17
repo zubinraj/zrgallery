@@ -65,7 +65,9 @@ class ZRGallery_Shortcode {
 
 		// Register scripts
 		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js' );
-		wp_register_script('jquery-isotope', plugins_url( '/js/jquery.isotope.min.js', __FILE__ ));
+		//wp_register_script('jquery-isotope', plugins_url( '/js/jquery.isotope.min.js', __FILE__ ));
+		wp_register_script('jquery-masonry', plugins_url( '/js/jquery.masonry.min.js', __FILE__ ));
+		//wp_register_script('modernizr-transitions', plugins_url( '/js/modernizr-transitions.js', __FILE__ ));
 		wp_register_script('jquery-ui', plugins_url( '/js/jquery-ui.min-1.8.23.js', __FILE__ ));
 		wp_register_script('jquery-image-gallery-load-image', plugins_url( '/js/load-image.min.js', __FILE__ ));
 		wp_register_script('jquery-image-gallery', plugins_url( '/js/jquery.image-gallery.js', __FILE__ ));
@@ -87,7 +89,9 @@ class ZRGallery_Shortcode {
 
 		// Enqueue scripts
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('jquery-isotope');
+		//wp_enqueue_script('jquery-isotope');
+		wp_enqueue_script('jquery-masonry');
+		//wp_enqueue_script('modernizr-transitions');
 		wp_enqueue_script('jquery-ui');
 		wp_enqueue_script('jquery-image-gallery-load-image');
 		wp_enqueue_script('jquery-image-gallery');

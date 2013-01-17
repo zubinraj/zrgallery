@@ -1,19 +1,16 @@
 
 	var $container = jQuery('#gallery-container');
 
-
-    $container.imagesLoaded( function(){
-		$container.isotope({
-			itemSelector : '.gallery-item',
-			isAnimated : true
-			//isFitWidth : true,
-			//resizable: false // disable normal resizing
-			// set columnWidth to a percentage of container width
-			//masonry: { columnWidth: $container.width() / 3 }
-			
-		});
-		
+    $container.masonry({
+      itemSelector: '.gallery-item',
+      //columnWidth: 283,
+      isAnimated: true
     });
+      //isAnimated: !Modernizr.csstransitions
+	
+//    $container.imagesLoaded( function(){
+		
+//    });
 	
 
 	// more requests
@@ -83,18 +80,19 @@
 		//hide new items while they are loading
 		var $newElems = jQuery( newElements ).css({ opacity: 0 });
 
+		$container.append( $newElems ).isotope( 'appended', $newElems );
+
+		// show elems now they're ready
+		$newElems.animate({ opacity: 1 });
+		
+		// reset this flag so that the next scroll can pull in more items
+		inAction = false;
+
 		// ensure that images load before adding to masonry layout
-		$newElems.imagesLoaded(function(){
+//		$newElems.imagesLoaded(function(){
 
-			$container.append( $newElems ).isotope( 'appended', $newElems );
 
-			// show elems now they're ready
-			$newElems.animate({ opacity: 1 });
-			
-			// reset this flag so that the next scroll can pull in more items
-			inAction = false;
-
-		}); 
+//		}); 
 
 	}
 	
