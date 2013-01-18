@@ -4,8 +4,8 @@
     $container.masonry({
       itemSelector: '.gallery-item',
       //columnWidth: 283,
-      isAnimated: true
-    });
+      isAnimatedFromBottom : true,
+	  });
       //isAnimated: !Modernizr.csstransitions
 	
 //    $container.imagesLoaded( function(){
@@ -50,7 +50,7 @@
 		
 		jQuery.ajax({
 			type: "post",
-			url: "/photos/wp-admin/admin-ajax.php",
+			url: "./../wp-admin/admin-ajax.php",
 			data: data,
 			//cache: false,
 			beforeSend: toggleLoadingImg(),		// show loading image
@@ -80,7 +80,7 @@
 		//hide new items while they are loading
 		var $newElems = jQuery( newElements ).css({ opacity: 0 });
 
-		$container.append( $newElems ).isotope( 'appended', $newElems );
+		$container.append( $newElems ).masonry( 'appended', $newElems );
 
 		// show elems now they're ready
 		$newElems.animate({ opacity: 1 });

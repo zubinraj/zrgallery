@@ -50,7 +50,8 @@ ul.horizontal_list a{
     width: 100%;
 	height: 100%;
 	border-radius: 3px 3px 3px 3px;
-    cursor: url("/photos/wp-content/themes/zr/images/cursor.png"), -moz-zoom-in;
+    /*cursor: url("/photos/wp-content/themes/zr/images/cursor.png"), -moz-zoom-in;*/
+	cursor: -moz-zoom-in;
 }
 
 .gallery-item .overlay .content {

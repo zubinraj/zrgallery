@@ -72,7 +72,7 @@ class ZRGallery_Shortcode {
 		wp_register_script('jquery-image-gallery-load-image', plugins_url( '/js/load-image.min.js', __FILE__ ));
 		wp_register_script('jquery-image-gallery', plugins_url( '/js/jquery.image-gallery.js', __FILE__ ));
 		wp_register_script('zrgallery', plugins_url( '/js/zrgallery.js', __FILE__ ));
-		wp_register_script('zrgallery', plugins_url( '/js/zrgallery.js', __FILE__ ));
+		//wp_register_script('zrgallery', plugins_url( '/js/zrgallery.js', __FILE__ ));
 
 		// Register styles
 		wp_register_style('zrgallery', plugins_url( '/css/zrgallery.css', __FILE__ ));
