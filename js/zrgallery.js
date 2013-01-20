@@ -25,7 +25,7 @@
 	var inAction = false;
 	var reachedEnd = false;
 	
-	jQuery(document).scroll(function(){
+/*	jQuery(document).scroll(function(){
 	
 		halfWay = (jQuery(document).height()/2) - 500;
 		
@@ -36,6 +36,7 @@
 			}
 		}		
 	}); 	
+*/
 
 	function loadMore()
 	{
