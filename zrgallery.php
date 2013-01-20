@@ -15,8 +15,8 @@
 
 add_action('init', 'ZRGallery_Shortcode::init');
 
-add_action('wp_ajax_zr_gallery_get', 'zr_gallery_get_callback');
-add_action('wp_ajax_nopriv_zr_gallery_get', 'zr_gallery_get_callback');
+//add_action('wp_ajax_zr_gallery_get', 'zr_gallery_get_callback');
+//add_action('wp_ajax_nopriv_zr_gallery_get', 'zr_gallery_get_callback');
 
 
 function zr_gallery_get_callback() {
