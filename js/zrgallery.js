@@ -3,14 +3,11 @@
 
     $container.masonry({
       itemSelector: '.gallery-item',
-      //columnWidth: 283,
-      isAnimatedFromBottom : true,
-	  });
+      //isAnimatedFromBottom: true
+	  isAnimated: true
       //isAnimated: !Modernizr.csstransitions
-	
-//    $container.imagesLoaded( function(){
-		
-//    });
+      //columnWidth: 283,
+	  });
 	
 
 	// more requests
@@ -20,12 +17,13 @@
 	});
 
 
+/*  disable ajax loading.
 	
 	var halfWay = (jQuery(document).height()/2);
 	var inAction = false;
 	var reachedEnd = false;
 	
-/*	jQuery(document).scroll(function(){
+	jQuery(document).scroll(function(){
 	
 		halfWay = (jQuery(document).height()/2) - 500;
 		
@@ -89,31 +87,9 @@
 		// reset this flag so that the next scroll can pull in more items
 		inAction = false;
 
-		// ensure that images load before adding to masonry layout
-//		$newElems.imagesLoaded(function(){
-
-
-//		}); 
-
 	}
 	
 	
-/*	function getMoreLink(html) {
-		// Get the more link from the html of the new page, else get from current page
-		if (html) {
-			return (jQuery(html).find("#more a").attr("href"));
-		}
-		else {
-			return (jQuery("#more a").attr("href"));
-		}
-	}
-
-
-	
-	function setMoreLink(newlink) {
-		jQuery("#more a").attr("href", newlink)
-	}
-*/	
 	function toggleLoadingImg() {
 		//alert ('toggle');
 		jQuery("#loading").toggle();
@@ -125,20 +101,6 @@
 
 
 /* start jquery image gallery */
-
-/* fade in the footer on hover */
-/*
-jQuery(function() {
-   jQuery('.ui-dialog-footer').css('display','none');
-   
-   jQuery('.ui-dialog-content').hover(function() {
-      alert ('in');
-      jQuery('.gallery-dialog-fullscreen .ui-dialog-footer',this).fadeIn();
-            
-      }, function() { jQuery('.gallery-dialog-fullscreen .ui-dialog-footer').fadeOut();
-   });
-});	
-*/
 
 jQuery(function () {
     'use strict';
@@ -156,77 +118,6 @@ jQuery(function () {
 	});
 	
 	
-/*	
-    // Initialize the theme switcher:
-    jQuery('#theme-switcher').change(function () {
-        var theme = jQuery('#theme');
-        theme.prop(
-            'href',
-            theme.prop('href').replace(
-                /[\w\-]+\/jquery-ui.css/,
-                jQuery(this).val() + '/jquery-ui.css'
-            )
-        );
-    });
-
-    // Create a buttonset out of the checkbox options:
-    jQuery('#buttonset').buttonset();
-
-    // Listen to options changes:
-    jQuery('#buttonset input, #effect').change(function () {
-        jQuery('#gallery').imagegallery('option', {
-            show: jQuery('#effect').val(),
-            hide: jQuery('#effect').val(),
-            fullscreen: jQuery('#option-fullscreen').is(':checked'),
-            slideshow: jQuery('#option-slideshow').is(':checked') && 5000
-        });
-    });
-
-    // Enable real fullscreen mode:
-    jQuery('#option-fullscreen').click(function () {
-        var checkbox = jQuery(this),
-            root = document.documentElement;
-        if (checkbox.is(':checked')) {
-            if (root.webkitRequestFullScreen) {
-                root.webkitRequestFullScreen(
-                    window.Element.ALLOW_KEYBOARD_INPUT
-                );
-            } else if (root.mozRequestFullScreen) {
-                root.mozRequestFullScreen();
-            }
-        } else {
-            (document.webkitCancelFullScreen ||
-                document.mozCancelFullScreen ||
-                jQuery.noop).apply(document);
-        }
-    });
-
-    // Load images via flickr for demonstration purposes:
-    jQuery.ajax({
-        url: 'http://api.flickr.com/services/rest/',
-        data: {
-            format: 'json',
-            method: 'flickr.interestingness.getList',
-            api_key: '7617adae70159d09ba78cfec73c13be3'
-        },
-	    dataType: 'jsonp',
-        jsonp: 'jsoncallback'
-    }).done(function (data) {
-        var gallery = jQuery('#gallery'),
-            url;
-        jQuery.each(data.photos.photo, function (index, photo) {
-            url = 'http://farm' + photo.farm + '.static.flickr.com/' +
-                photo.server + '/' + photo.id + '_' + photo.secret;
-            jQuery('<a rel="gallery"/>')
-                .append(jQuery('<img>').prop('src', url + '_s.jpg'))
-                .prop('href', url + '_b.jpg')
-                .prop('title', photo.title)
-                .appendTo(gallery);
-        });
-    });
-*/
-
-/* end jquery image gallery */
 
 
 });
