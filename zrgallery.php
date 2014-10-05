@@ -134,16 +134,18 @@ class ZRGallery_Shortcode {
 			$p['offset'] = 0; //default
 		
 		// convert category slug to id
+		$cat_id = 99999;
 		$obj = get_category_by_slug($p['category']); 
-		$cat_id = $obj->term_id;
-		
+		if ($obj)
+			$cat_id = $obj->term_id;
+			
 		$posts = ZRGallery_Shortcode::get_gallery_items_array($cat_id, $p['tag'], $p['count'], $p['offset']); 
 
 		
 		if (count($posts) <= 0)
 		{
-			header('HTTP/1.0 404 Not Found');
-			echo "<h5>Sorry, there are no items to display.</h5>";
+			//header('HTTP/1.0 404 Not Found');
+			echo "<span>Sorry, there are no photos to display.</span>";
 			return '';
 		}
 		
@@ -186,7 +188,7 @@ class ZRGallery_Shortcode {
 					); 
 						
 		$posts = get_posts( $args );
-		
+
 		if ($posts) 
 		{
 			foreach ( $posts as $post ) 
@@ -206,7 +208,7 @@ class ZRGallery_Shortcode {
 								); 
 				
 				$attachments = get_posts($attargs);
-				
+
 				if ($attachments) 
 				{
 					foreach ( $attachments as $attachment ) 
