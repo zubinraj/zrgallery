@@ -133,8 +133,11 @@ class ZRGallery_Shortcode {
 		if (!is_numeric($p['offset']))
 			$p['offset'] = 0; //default
 		
+		// convert category slug to id
+		$obj = get_category_by_slug($p['category']); 
+		$cat_id = $obj->term_id;
 		
-		$posts = ZRGallery_Shortcode::get_gallery_items_array($p['category'], $p['tag'], $p['count'], $p['offset']); 
+		$posts = ZRGallery_Shortcode::get_gallery_items_array($cat_id, $p['tag'], $p['count'], $p['offset']); 
 
 		
 		if (count($posts) <= 0)
